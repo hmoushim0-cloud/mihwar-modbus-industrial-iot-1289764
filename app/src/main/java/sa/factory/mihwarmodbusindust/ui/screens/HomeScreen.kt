@@ -26,6 +26,7 @@ fun HomeScreen(
     viewModel: MihwarModbusViewModel,
     onItemClick: (MihwarModbusItem) -> Unit
 ) {
+    val defaultPeripheral = "3-Axis Industrial Vibration Accelerometer + Modbus RS485"
     val categories = listOf("الكل", "الخدمات الرئيسية", "المراقبة الحية", "التقارير الضريبية", "الإعدادات")
 
     Column(
@@ -36,8 +37,8 @@ fun HomeScreen(
     ) {
         // Header
         Column {
-            Text("تطبيق محور الصناعي — مصمم ومطور مواقع محترف ومستق", fontSize = 22.sp, fontWeight = FontWeight.Black, color = BrandTextPrimary)
-            Text("منظومة industrial_iot المتكاملة مع ربط 3-Axis Vibration Accelerometer + Modbus RS485 Acoustic Probe", fontSize = 12.sp, color = BrandTextSecondary)
+            Text("محور لإنترنت الأشياء الصناعي - Mihwar Industrial IoT", fontSize = 22.sp, fontWeight = FontWeight.Black, color = BrandTextPrimary)
+            Text("مراقبة وتحليل الاهتزازات الميكانيكية للآلات والتوربينات الصناعية عبر بروتوكول Modbus RS485", fontSize = 12.sp, color = BrandTextSecondary)
         }
 
         // Hardware Status Capsule
@@ -52,8 +53,8 @@ fun HomeScreen(
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Column(modifier = Modifier.weight(1f)) {
-                    Text("العتاد الحي: ${state.telemetry?.peripheralName ?: '3-Axis Vibration Accelerometer + Modbus RS485 Acoustic Probe'}", fontWeight = FontWeight.Bold, color = BrandPrimary, fontSize = 13.sp)
-                    Text(state.telemetry?.liveReading ?: "3-Axis Vibration Accelerometer + Modbus RS485 Acoustic Probe: ONLINE | READY", fontSize = 11.sp, color = BrandTextSecondary)
+                    Text("العتاد الحي: ${state.telemetry?.peripheralName ?: defaultPeripheral}", fontWeight = FontWeight.Bold, color = BrandPrimary, fontSize = 13.sp)
+                    Text(state.telemetry?.liveReading ?: "3-Axis Vibration Accelerometer + Modbus RS485: ONLINE | READY", fontSize = 11.sp, color = BrandTextSecondary)
                 }
                 Badge(containerColor = BrandPrimary) {
                     Text(state.telemetry?.status ?: "ONLINE", color = Color.Black, fontWeight = FontWeight.Bold, modifier = Modifier.padding(2.dp))

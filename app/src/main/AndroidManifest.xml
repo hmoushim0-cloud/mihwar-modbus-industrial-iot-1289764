@@ -10,7 +10,7 @@
 
     <application
         android:allowBackup="true"
-        android:label="تطبيق محور الصناعي — مصمم ومطور مواقع محترف ومستق"
+        android:label="محور لإنترنت الأشياء الصناعي - Mihwar Modbus Industrial IoT"
         android:supportsRtl="true"
         android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
         <activity
